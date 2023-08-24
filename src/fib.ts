@@ -1,5 +1,5 @@
 // util function that computes the fibonacci numbers
-module.exports = function fibonacci(n:number): number{
+function fibonacci (n: number): number{
   if (n < 0) {
     return -1;
   } else if (n == 0) {
@@ -8,6 +8,7 @@ module.exports = function fibonacci(n:number): number{
     return 1;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   return fibonacci(n - 1) + fibonacci(n - 2);
-};
+}
+
+export default fibonacci;
