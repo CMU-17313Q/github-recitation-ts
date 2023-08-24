@@ -1,19 +1,20 @@
-// Endpoint for querying the fibonacci numbers
+ // Import the fibonacci function 
+import fibonacci from "./fib";
 
-const fibonacci = require("./fib");
+// Import Request and Response types from Express
+import { Request, Response } from "express"; 
 
-export default (req, res) => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
+export default (req: Request, res: Response) => {
   const { num } = req.params;
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-  const fibN = fibonacci(parseInt(num));
-  let result = `fibonacci(${num}) is ${fibN}`;
+  const fibN = fibonacci(parseInt(num, 10)); // Specify radix 10 when parsing integers
+  let result: string;
 
   if (fibN < 0) {
     result = `fibonacci(${num}) is undefined`;
+  } else {
+    result = `fibonacci(${num}) is ${fibN}`;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
   res.send(result);
 };
