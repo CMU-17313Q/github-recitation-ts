@@ -8,6 +8,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "My program is not running and I am making a change",
   ],
   ignorePatterns: ["*.js", "*.test.ts"],
 
